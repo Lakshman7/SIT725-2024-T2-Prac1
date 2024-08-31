@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Central</title>
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles */
+        #hero {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        #hero .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        #hero::before {
+            content: "";
+            background: url('images/jordan.jpg') no-repeat center center/cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.7; /* Adjust the opacity for slight visibility of the image */
+            filter: blur(2px); /* Apply a slight blur effect */
+        }
+
+        .feature img, .match-review img {
+            max-width: 100%; /* Makes sure the image is responsive */
+            height: auto; /* Maintains aspect ratio */
+            max-height: 300px; /* Limits the height of the image */
+        }
+
+        #welcome-message {
+            color: black; /* Change text color if needed */
+            font-size: 1.5em;
+        }
+
+        .contact-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .contact-container img {
+            max-width: 200px; /* Adjust the width of the Kobe image */
+            height: auto;
+            margin-right: 20px; /* Space between image and form */
+        }
+
+        .contact-container form {
+            flex-grow: 1;
+        }
+
+        .section-heading {
+            color: #000;
+            text-decoration: none;
+            font-size: 2em;
+        }
+
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .popup p {
+            margin: 10px 0;
+        }
+
+        .popup button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav-wrapper">
+        <a href="#" class="brand-logo">Sports Central</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#match-reviews">Match Reviews</a></li>
+            <li><a href="#latest-news">Latest News</a></li>
+            <li><a href="#player-stats">Player Stats</a></li>
+            <li><a href="#live-scores">Live Scores</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to Sports Central</h1>
+            <p>Your go-to place for the latest sports updates and features.</p>
+            <p id="welcome-message">Don't miss the latest updates.</p>
+        </div>
+    </section>
+
+    <!-- Match Reviews Section -->
+    <section id="match-reviews">
+        <a href="#match-reviews" class="section-heading">Match Reviews</a>
+        <div class="match-review">
+            <img src="images/virat2.jpg" alt="Match Review - Virat">
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section id="latest-news">
+        <a href="#latest-news" id="latest-news-link" class="section-heading">Latest News</a>
+        <p>Stay updated with the latest sports news from around the world.</p>
+        <div class="feature">
+            <img src="images/nadal.jpg" alt="Latest News">
+        </div>
+    </section>
+
+    <!-- Player Stats Section -->
+    <section id="player-stats">
+        <a href="#player-stats" class="section-heading">Player Stats</a>
+        <p>Access detailed statistics and profiles of your favorite players.</p>
+        <div class="feature">
+            <img src="images/ronaldo.jpg" alt="Player Stats">
+        </div>
+    </section>
+
+    <!-- Live Scores Section -->
+    <section id="live-scores">
+        <a href="#live-scores" class="section-heading">Live Scores</a>
+        <p>Get real-time scores and updates on ongoing sports events.</p>
+        <div class="feature">
+            <img src="images/abd.jpg" alt="Live Scores">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <a href="#contact" class="section-heading">Contact Us</a>
+        <div class="contact-container">
+            <img src="images/kobe.jpg" alt="Kobe Bryant">
+            <form id="contact-form">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+                <p id="form-feedback"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Popup for News -->
+    <div id="news-popup" class="popup">
+        <h2>Breaking News</h2>
+        <p>KL Rahul transfers to RCB</p>
+        <button id="close-popup">Close</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h5 class="white-text">Sports Cental</h5>
+                    <p class="grey-text text-lighten-4">All the best Sports content in one place.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; 2024 Sports Central.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include Materialize JS -->
+    <script src="js/materialize.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
