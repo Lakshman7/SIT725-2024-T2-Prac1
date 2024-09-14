@@ -1,0 +1,107 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+.nav-wrapper {
+    background-color: #333;
+}
+
+.nav-wrapper a {
+    color: white;
+}
+
+.nav-wrapper ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+#hero {
+    background: url('images/sports-hero.jpg') no-repeat center center/cover;
+    height: 400px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Welcome Section */
+#welcome {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Features Section */
+#features {
+    padding: 20px;
+}
+
+.feature {
+    margin-bottom: 20px;
+}
+
+.feature img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 20px;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#contact button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+.page-footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-copyright {
+    background-color: #222;
+    padding: 10px 0;
+}
